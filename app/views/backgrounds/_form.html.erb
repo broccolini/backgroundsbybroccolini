@@ -22,10 +22,10 @@
   
   <div>
     <%= f.label :brand_id, "Brand" %>
-    <%= f.select :brand_id, Brand.all.map { |b| [b.name, b.id] } %>
+    <%= f.select :brand_id, Brand.all.map { |b| [b.name, b.id] }, :include_blank => true %>
   </div>
   
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Submit", :disable_with => 'Submiting...' %>
   </div>
 <% end %>

@@ -18,11 +18,14 @@ class BackgroundsController < ApplicationController
   end
 
   def create
+    tags = params[:background].delete(:tags)
     @background = Background.new(params[:background])
 
     if @background.slug.blank?
       @background.slug = sluggify(@background.name)
     end
+
+    update_tags(@background, tags)
 
     if @background.save
       redirect_to(background_path(@background.slug), :notice => 'Background was successfully created.')
@@ -32,8 +35,10 @@ class BackgroundsController < ApplicationController
   end
 
   def update
+    tags = params[:background].delete(:tags)
     @background = Background.find(params[:id])
     params[:background][:slug] = sluggify(params[:background][:slug])
+    update_tags(@background, tags)
 
     if @background.update_attributes(params[:background])
       redirect_to(background_path(@background.slug), :notice => 'Background was successfully updated.')
@@ -46,5 +51,17 @@ class BackgroundsController < ApplicationController
     @background = Background.find(params[:id])
     @background.destroy
     redirect_to backgrounds_path
+  end
+
+  private
+
+  def update_tags(background, tags)
+    background.tags = []
+
+    unless tags.blank?
+      tags.split(",").each do |tag|
+        background.tags << Tag.find_or_create_by_name(tag.strip.downcase)
+      end
+    end
   end
 end

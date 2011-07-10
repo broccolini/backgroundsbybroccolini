@@ -20,7 +20,7 @@
     <%= f.label :description %><br />
     <%= f.text_area :description %>
   </div>
-  
+
   <div class="field">
     <%= f.label :slug %><br />
     <%= f.text_field :slug %>
@@ -30,7 +30,12 @@
     <%= f.label :brand_id, "Brand" %>
     <%= f.select :brand_id, Brand.all.map { |b| [b.name, b.id] }, :include_blank => true %>
   </div>
-  
+
+  <div class="field">
+    <%= f.label :tags %><br />
+    <%= f.text_field :tags, :value => @background.tags.map{ |t| t.name }.join(", ") %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Submit", :disable_with => 'Submiting...' %>
   </div>

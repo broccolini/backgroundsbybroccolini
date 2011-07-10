@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110710201359) do
+ActiveRecord::Schema.define(:version => 20110710211938) do
 
   create_table "backgrounds", :force => true do |t|
     t.string   "name"
@@ -21,12 +21,25 @@ ActiveRecord::Schema.define(:version => 20110710201359) do
     t.string   "slug"
   end
 
+  create_table "backgrounds_tags", :id => false, :force => true do |t|
+    t.integer  "background_id"
+    t.integer  "tag_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "brands", :force => true do |t|
     t.string   "name"
     t.string   "url"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "slug"
+  end
+
+  create_table "tags", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", :force => true do |t|

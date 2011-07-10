@@ -4,6 +4,9 @@
   <dt>Name</dt>
   <dd><%= link_to_unless_current background.name, background_path(background.slug) %></dd>
 
+  <dt>Download</dt>
+  <dd><%= link_to_download(background) %></dd>
+
   <dt>Description</dt>
   <dd><%= background.description %></dd>
 

@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Backgroundsbybroccolini</title>
+  <title>Backgrounds by broccolini</title>
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
 </head>
 <body>
+
+  <ul>
+    <li><%= link_to_unless_current "Brands", brands_path %></li>
+    <li><%= link_to_unless_current "Backgrounds", backgrounds_path %></li>
+    <li><%= link_to_unless_current "New Brand", new_brand_path %></li>
+    <li><%= link_to_unless_current "New Background", new_background_path %></li>
+  </ul>
 
 <%= yield %>
 

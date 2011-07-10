@@ -17,7 +17,7 @@
     <td>
       <ul>
         <% brand.backgrounds.each do |background| %>
-          <li><%= background.name %></li>
+          <li><%= link_to background.name, background %></li>
         <% end %>
       </ul>
     </td>
@@ -27,7 +27,3 @@
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New Brand', new_brand_path %>

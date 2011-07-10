@@ -13,11 +13,8 @@
 <b>Backgrounds</b>
 <ul>
   <% @brand.backgrounds.each do |background| %>
-    <li><%= background.name %></li>
+    <li><%= link_to background.name, background %></li>
   <% end %>
 </ul>
 
-
-
-<%= link_to 'Edit', edit_brand_path(@brand) %> |
-<%= link_to 'Back', brands_path %>
+<%= link_to 'Edit', edit_brand_path(@brand) %>

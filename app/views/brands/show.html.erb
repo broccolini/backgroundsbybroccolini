@@ -17,4 +17,6 @@
   <% end %>
 </ul>
 
-<%= link_to 'Edit', edit_brand_path(@brand) %>
+<% if current_user %>
+  <%= link_to 'Edit', edit_brand_path(@brand) %>
+<% end %>

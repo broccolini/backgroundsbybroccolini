@@ -15,4 +15,6 @@
   <%= link_to @background.brand.name, @background.brand %>
 </p>
 
-<%= link_to 'Edit', edit_background_path(@background) %>
+<% if current_user %>
+  <%= link_to 'Edit', edit_background_path(@background) %>
+<% end %>

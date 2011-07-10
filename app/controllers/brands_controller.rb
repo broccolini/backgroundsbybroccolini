@@ -1,4 +1,6 @@
 class BrandsController < ApplicationController
+  before_filter :require_login, :except => [:index, :show]
+
   def index
     @brands = Brand.all
   end

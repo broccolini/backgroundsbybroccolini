@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<dl>
+  <dt>Name</dt>
+  <dd><%= link_to brand.name, brand_path(brand.slug) %></dd>
+  <dt>URL</dt>
+  <dd><%= link_to brand.url, brand.url, :rel => "external" %></dd>
+  
+  <% if current_user %>
+    <dt>Slug</dt>
+    <dd><%= brand.slug %></dd>
+  <% end %>
+  
+  <dt>Backgrounds</dt>
+  <dd>
+    <ul>
+      <% brand.backgrounds.each do |background| %>
+        <li><%= link_to background.name, background_path(background.slug) %></li>
+      <% end %>
+    </ul>
+  </dd>
+</dl>
+
+<% if current_user %>
+  <%= link_to 'Edit', edit_brand_path(brand) %>
+  <%= link_to 'Destroy', brand, :confirm => 'Are you sure?', :method => :delete %>
+<% end %>

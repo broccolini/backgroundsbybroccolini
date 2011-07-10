@@ -33,6 +33,7 @@ class BrandsController < ApplicationController
 
   def update
     @brand = Brand.find(params[:id])
+    @brand.slug = sluggify(@brand.slug)
 
     if @brand.update_attributes(params[:brand])
       redirect_to(brand_path(@brand.slug), :notice => 'Brand was successfully updated.')

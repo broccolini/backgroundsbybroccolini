@@ -33,6 +33,7 @@ class BackgroundsController < ApplicationController
 
   def update
     @background = Background.find(params[:id])
+    params[:background][:slug] = sluggify(params[:background][:slug])
 
     if @background.update_attributes(params[:background])
       redirect_to(background_path(@background.slug), :notice => 'Background was successfully updated.')

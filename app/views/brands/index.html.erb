@@ -1,32 +1,7 @@
-<h1>Listing brands</h1>
+<h1>Brands</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Url</th>
-    <th>Backgrounds</th>
-    <th>Slug</th>
-    <th></th>
-  </tr>
-
-<% @brands.each do |brand| %>
-  <tr>
-    <td><%= link_to brand.name, brand_path(brand.slug) %></td>
-    <td><%= brand.url %></td>
-    <td>
-      <ul>
-        <% brand.backgrounds.each do |background| %>
-          <li><%= link_to background.name, background_path(background.slug) %></li>
-        <% end %>
-      </ul>
-    </td>
-    <td><%= brand.slug %></td>
-    <td>
-      <% if current_user %>
-        <%= link_to 'Edit', edit_brand_path(brand) %>
-        <%= link_to 'Destroy', brand, :confirm => 'Are you sure?', :method => :delete %>
-      <% end %>
-    </td>
-  </tr>
-<% end %>
-</table>
+<ul>
+  <% @brands.each do |brand| %>
+    <li><%= render :partial => brand %></li>
+  <% end %>
+</ul>

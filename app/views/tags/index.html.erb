@@ -1,0 +1,7 @@
+<h1>Tags</h1>
+
+<ul>
+  <% @tags.sort_by{ |t| t.name }.each do |tag| %>
+    <li><%= render :partial => tag %></li>
+  <% end %>
+</ul>

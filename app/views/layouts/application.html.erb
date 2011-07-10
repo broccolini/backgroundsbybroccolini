@@ -9,9 +9,9 @@
 <body>
 
   <ul>
-    <li><%= link_to_unless_current "Brands", brands_path %></li>
+    <li><%= link_to_unless_current "Tags",        tags_path %></li>
+    <li><%= link_to_unless_current "Brands",      brands_path %></li>
     <li><%= link_to_unless_current "Backgrounds", backgrounds_path %></li>
-
 
     <% if current_user %>
       <li><%= link_to_unless_current "New Brand", new_brand_path %></li>
@@ -21,7 +21,6 @@
   </ul>
 
   <%= yield %>
-
 
   <footer>
     <% if Rails.env.development? && !current_user %>

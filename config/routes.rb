@@ -1,6 +1,9 @@
 Backgroundsbybroccolini::Application.routes.draw do
   root :to => "backgrounds#index"
 
+  match "tags"       => "tags#index"
+  match "tags/:slug" => "tags#show", :as => :tag
+
   resources :brands,      :except => [:show]
   resources :backgrounds, :except => [:show]
 

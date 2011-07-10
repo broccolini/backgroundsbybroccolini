@@ -1,0 +1,11 @@
+<h2>
+  <%= link_to_unless_current tag.name, tag_path(sluggify(tag.name)) %>
+</h2>
+
+<ul>
+  <% tag.backgrounds.each do |background| %>
+    <li>
+      <%= link_to background.name, background_path(background.slug) %>
+    </li>
+  <% end %>
+</ul>

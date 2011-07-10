@@ -1,4 +1,5 @@
 Backgroundsbybroccolini::Application.routes.draw do
+  resources :backgrounds
   resources :brands
 
   # The priority is based upon order of creation:

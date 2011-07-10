@@ -15,11 +15,17 @@
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
+
   <div class="field">
     <%= f.label :description %><br />
     <%= f.text_area :description %>
   </div>
   
+  <div class="field">
+    <%= f.label :slug %><br />
+    <%= f.text_field :slug %>
+  </div>
+
   <div>
     <%= f.label :brand_id, "Brand" %>
     <%= f.select :brand_id, Brand.all.map { |b| [b.name, b.id] }, :include_blank => true %>

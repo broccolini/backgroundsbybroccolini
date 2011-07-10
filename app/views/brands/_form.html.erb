@@ -15,10 +15,17 @@
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
+
   <div class="field">
     <%= f.label :url %><br />
     <%= f.text_field :url %>
   </div>
+
+  <div class="field">
+    <%= f.label :slug %><br />
+    <%= f.text_field :slug %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Submit", :disable_with => 'Submiting...' %>
   </div>

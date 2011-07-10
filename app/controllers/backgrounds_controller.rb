@@ -6,7 +6,7 @@ class BackgroundsController < ApplicationController
   end
 
   def show
-    @background = Background.find(params[:id])
+    @background = Background.where(:slug => params[:slug]).first
   end
 
   def new
@@ -20,8 +20,12 @@ class BackgroundsController < ApplicationController
   def create
     @background = Background.new(params[:background])
 
+    if @background.slug.blank?
+      @background.slug = sluggify(@background.name)
+    end
+
     if @background.save
-      redirect_to(@background, :notice => 'Background was successfully created.')
+      redirect_to(background_path(@background.slug), :notice => 'Background was successfully created.')
     else
       render :action => "new"
     end
@@ -31,7 +35,7 @@ class BackgroundsController < ApplicationController
     @background = Background.find(params[:id])
 
     if @background.update_attributes(params[:background])
-      redirect_to(@background, :notice => 'Background was successfully updated.')
+      redirect_to(background_path(@background.slug), :notice => 'Background was successfully updated.')
     else
       render :action => "edit"
     end

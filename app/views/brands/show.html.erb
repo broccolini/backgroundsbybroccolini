@@ -10,13 +10,19 @@
   <%= @brand.url %>
 </p>
 
+<p>
+  <b>Slug:</b>
+  <%= @brand.slug %>
+</p>
+
 <b>Backgrounds</b>
 <ul>
   <% @brand.backgrounds.each do |background| %>
-    <li><%= link_to background.name, background %></li>
+    <li><%= link_to background.name, background_path(background.slug) %></li>
   <% end %>
 </ul>
 
 <% if current_user %>
   <%= link_to 'Edit', edit_brand_path(@brand) %>
+  <%= link_to 'Destroy', @brand, :confirm => 'Are you sure?', :method => :delete %>
 <% end %>

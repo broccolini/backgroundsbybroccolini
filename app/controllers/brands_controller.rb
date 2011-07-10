@@ -6,7 +6,7 @@ class BrandsController < ApplicationController
   end
 
   def show
-    @brand = Brand.find(params[:id])
+    @brand = Brand.where(:slug => params[:slug]).first
   end
 
   def new
@@ -20,8 +20,12 @@ class BrandsController < ApplicationController
   def create
     @brand = Brand.new(params[:brand])
 
+    if @brand.slug.blank?
+      @brand.slug = sluggify(@brand.name)
+    end
+
     if @brand.save
-      redirect_to(@brand, :notice => 'Brand was successfully created.')
+      redirect_to(brand_path(@brand.slug), :notice => 'Brand was successfully created.')
     else
       render :action => "new"
     end
@@ -31,7 +35,7 @@ class BrandsController < ApplicationController
     @brand = Brand.find(params[:id])
 
     if @brand.update_attributes(params[:brand])
-      redirect_to(@brand, :notice => 'Brand was successfully updated.')
+      redirect_to(brand_path(@brand.slug), :notice => 'Brand was successfully updated.')
     else
       render :action => "edit"
     end

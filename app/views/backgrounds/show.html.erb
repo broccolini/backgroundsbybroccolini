@@ -12,7 +12,7 @@
 
 <p>
   <b>Brand:</b>
-  <%= link_to @background.brand.name, @background.brand %>
+  <%= link_to @background.brand.name, brand_path(@background.brand.slug) %>
 </p>
 
 <p>
@@ -22,4 +22,5 @@
 
 <% if current_user %>
   <%= link_to 'Edit', edit_background_path(@background) %>
+  <%= link_to 'Destroy', @background, :confirm => 'Are you sure?', :method => :delete %>
 <% end %>

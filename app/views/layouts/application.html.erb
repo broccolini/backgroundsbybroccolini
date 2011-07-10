@@ -24,7 +24,7 @@
 
 
   <footer>
-    <% if Rails.env.development? %>
+    <% if Rails.env.development? && !current_user %>
       <%= link_to "Sign In with GitHub", "/auth/github" %>
     <% end %>
   </footer>

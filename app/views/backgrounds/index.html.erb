@@ -5,17 +5,20 @@
     <th>Name</th>
     <th>Description</th>
     <th>Brand</th>
+    <th>Slug</th>
     <th></th>
   </tr>
 
 <% @backgrounds.each do |background| %>
   <tr>
-    <td><%= link_to background.name, background %></td>
+    <td><%= link_to background.name, background_path(background.slug) %></td>
     <td><%= background.description %></td>
 
     <td>
-      <%= link_to background.brand.name, background.brand %>
+      <%= link_to background.brand.name, brand_path(background.brand.slug) %>
     </td>
+
+    <td><%= background.slug %></td>
 
     <td>
       <% if current_user %>

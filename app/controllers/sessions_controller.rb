@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
     auth  = request.env["omniauth.auth"]
     login = request.env["omniauth.auth"]["extra"]["user_hash"]["login"]
 
-    if %w(broccolini).include?(login)
+    if %w(broccolini veganstraightedge).include?(login)
       user = User.find_by_provider_and_uid(auth["provider"], auth["uid"].to_s) || User.create_with_omniauth(auth)
       session[:user_id] = user.id
     end

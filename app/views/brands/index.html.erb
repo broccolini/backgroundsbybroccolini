@@ -5,20 +5,22 @@
     <th>Name</th>
     <th>Url</th>
     <th>Backgrounds</th>
+    <th>Slug</th>
     <th></th>
   </tr>
 
 <% @brands.each do |brand| %>
   <tr>
-    <td><%= link_to brand.name, brand %></td>
+    <td><%= link_to brand.name, brand_path(brand.slug) %></td>
     <td><%= brand.url %></td>
     <td>
       <ul>
         <% brand.backgrounds.each do |background| %>
-          <li><%= link_to background.name, background %></li>
+          <li><%= link_to background.name, background_path(background.slug) %></li>
         <% end %>
       </ul>
     </td>
+    <td><%= brand.slug %></td>
     <td>
       <% if current_user %>
         <%= link_to 'Edit', edit_brand_path(brand) %>

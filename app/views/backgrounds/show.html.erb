@@ -10,6 +10,10 @@
   <%= @background.description %>
 </p>
 
+<p>
+  <b>Brand:</b>
+  <%= @background.brand.name %>
+</p>
 
 <%= link_to 'Edit', edit_background_path(@background) %> |
 <%= link_to 'Back', backgrounds_path %>

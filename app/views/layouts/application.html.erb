@@ -20,7 +20,14 @@
     <% end %>
   </ul>
 
-<%= yield %>
+  <%= yield %>
+
+
+  <footer>
+    <% if Rails.env.development? %>
+      <%= link_to "Sign In with GitHub", "/auth/github" %>
+    <% end %>
+  </footer>
 
 </body>
 </html>

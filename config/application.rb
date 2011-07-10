@@ -12,3 +12,7 @@ module Backgroundsbybroccolini
     config.filter_parameters += [:password]
   end
 end
+
+#                        production key from heroku       development key
+GITHUB_CONSUMER_KEY    = ENV["GITHUB_CONSUMER_KEY"]    || "cf889255ecfd88b422a6"
+GITHUB_CONSUMER_SECRET = ENV["GITHUB_CONSUMER_SECRET"] || "a4b51b121f8bdd3245f1237e2b0f7c6dbeccb8da"

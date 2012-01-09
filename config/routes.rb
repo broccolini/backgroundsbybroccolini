@@ -1,5 +1,7 @@
 Backgroundsbybroccolini::Application.routes.draw do
-  root :to => "backgrounds#index"
+  get "dashboard/index"
+
+  root :to => "dashboard#index"
 
   match "tags"       => "tags#index"
   match "tags/:slug" => "tags#show", :as => :tag

@@ -1,0 +1,115 @@
+/*
+KSS Styleguide for Backgrounds by broccolini
+
+Created by:
+Diana Mounter
+
+Styleguide 0.1
+*/
+
+
+/* @group Meyer Reset */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+
+/* remember to highlight inserts somehow! */
+ins {
+	text-decoration: none;
+}
+del {
+	text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.clear { clear: both; }
+
+::-webkit-input-placeholder { color: #00A5D8; opacity: .7; }
+:-moz-placeholder { color: #00A5D8; opacity: .7; border: none; }
+:required { box-shadow: none; }
+
+
+/* @end */
+
+/*
+Basic text styles
+
+*/
+
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	background-color: #fafafa;
+	padding-bottom: 60px;
+}
+
+h1, h2, h3, h4 {
+	font-family:"din-condensed-web", Georgia, Serif;
+	color: #333;
+}
+
+h1 {
+	font-size: 40px;
+	font-weight: normal;
+	margin: 0 0 24px;
+}
+
+h2 {
+	font-size: 24px;
+	font-weight: normal;
+	margin: 0 0 20px;
+}
+
+
+/*
+Structure
+
+.container
+
+*/
+
+	.container {
+		margin: 0 auto;
+		width: 960px;
+	}
+	
+	.major {
+		margin-top: 50px;
+	}
+
+
+

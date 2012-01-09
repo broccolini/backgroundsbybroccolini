@@ -2,11 +2,15 @@
 <html>
 <head>
   <title>Backgrounds by broccolini</title>
-  <%= stylesheet_link_tag :all %>
+  <%= stylesheet_link_tag "style" %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
+	<script type="text/javascript" src="http://use.typekit.com/ujg3ali.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
 <body>
+	<div class="container">
+	<h1>Backgrounds by broccolini</h1>
 
   <ul>
     <li><%= link_to_unless_current "Tags",        tags_path %></li>
@@ -27,6 +31,6 @@
       <%= link_to "Sign In with GitHub", "/auth/github" %>
     <% end %>
   </footer>
-
+</div><!--container-->
 </body>
 </html>

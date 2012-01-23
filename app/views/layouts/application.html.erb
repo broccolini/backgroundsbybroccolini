@@ -9,10 +9,12 @@
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
 <body>
-	<div class="container">
-	<h1>Backgrounds by broccolini</h1>
+	<div id="nav">
+	<h1>Backgrounds <span class="designer">by broccolini</span></h1>
+	<p>Wallpaper for desktops and devices.</p>
 
-  <ul>
+
+  <ul class="nav-list">
     <li><%= link_to_unless_current "Tags",        tags_path %></li>
     <li><%= link_to_unless_current "Brands",      brands_path %></li>
     <li><%= link_to_unless_current "Backgrounds", backgrounds_path %></li>
@@ -23,14 +25,17 @@
       <li><%= link_to "Sign Out", signout_path %></li>
     <% end %>
   </ul>
+	</div><!--nav-list-->
+</div><!--container-->
 
+<div class="page">
   <%= yield %>
+</div><!--page-->
 
   <footer>
     <% if Rails.env.development? && !current_user %>
       <%= link_to "Sign In with GitHub", "/auth/github" %>
     <% end %>
   </footer>
-</div><!--container-->
 </body>
 </html>

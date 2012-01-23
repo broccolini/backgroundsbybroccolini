@@ -1,6 +1,6 @@
 <%= form_for(@background) do |f| %>
   <% if @background.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation" class="page">
       <h2><%= pluralize(@background.errors.count, "error") %> prohibited this background from being saved:</h2>
 
       <ul>
@@ -40,3 +40,4 @@
     <%= f.submit "Submit", :disable_with => 'Submiting...' %>
   </div>
 <% end %>
+

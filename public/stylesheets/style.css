@@ -160,7 +160,7 @@ div.title h2 {
 }
 
 #meta {
-	width: 175px;
+	width: 177px;
 	position: absolute;
 	display: inline-block;
 	top: 0;
@@ -186,9 +186,9 @@ Structure
 }
 
 	div.page {
-		width: 820px;
+		width: 828px;
 		margin: 30px 0 0 200px;
-		padding-right: 30px;
+		padding-right: 28px;
 	}
 	
 	div.home {
@@ -206,7 +206,15 @@ Structure
 	div.brands {
 		
 	}
-	
+
+#grid {
+	position: relative;
+}
+
+
+/*
+lists
+*/	
 	
 ul.nav-list {
 	font-weight: 200;
@@ -215,7 +223,19 @@ ul.nav-list {
 
 ul.nav-list li {
 	line-height: 1.4em;
+}
+
+
+ul.backgrounds {
+	display: block;
 }	
+
+ul.backgrounds li {
+	display: inline;
+	padding-right: 37px;
+	float: left;
+	margin-bottom: 46px;
+}
 	
 	
 

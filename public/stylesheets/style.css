@@ -101,6 +101,9 @@ h2 {
 	margin: 0 0 20px;
 }
 
+h3 {
+	font-size: 20px;
+}
 
 a {
 	color: #000;
@@ -168,7 +171,9 @@ div.title h2 {
 	padding-right: 30px;
 }
 
-
+#meta .detail {
+	position: relative;
+}
 
 /*
 Structure
@@ -195,8 +200,23 @@ Structure
 		
 	}
 	
-	div.detail {
-		
+	div.detail-img {
+		width: auto;
+		display: inline-block;
+		margin-bottom: 23px;
+	}
+	
+	div.detail-content {
+		position: relative;
+		margin-bottom: 63px;
+	}
+	
+	div.info {
+		width: 583px;
+	}
+	
+	div.downloads {
+		display: inline-block;
 	}
 	
 	div.tags {
@@ -237,7 +257,9 @@ ul.backgrounds li {
 	margin-bottom: 46px;
 }
 	
-	
+
+
+
 
 
 
